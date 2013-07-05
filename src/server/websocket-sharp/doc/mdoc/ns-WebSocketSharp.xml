@@ -1,0 +1,6 @@
+<Namespace Name="WebSocketSharp">
+  <Docs>
+    <summary>To be added.</summary>
+    <remarks>The WebSocketSharp namespace provides an implementation of the WebSocket interface.</remarks>
+  </Docs>
+</Namespace>

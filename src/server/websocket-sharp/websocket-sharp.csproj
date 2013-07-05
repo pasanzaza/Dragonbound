@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B357BAC7-529E-4D81-A0D2-71041B19C8DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WebSocketSharp</RootNamespace>
+    <AssemblyName>websocket-sharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>websocket-sharp.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Ubuntu|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug_Ubuntu</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Ubuntu|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release_Ubuntu</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <GenerateDocumentation>true</GenerateDocumentation>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="doc/doc.sh" workingdir="doc/" externalConsole="true" />
+      </CustomCommands>
+    </CustomCommands>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Ext.cs" />
+    <Compile Include="WsState.cs" />
+    <Compile Include="MessageEventArgs.cs" />
+    <Compile Include="CloseEventArgs.cs" />
+    <Compile Include="WsReceivedTooBigMessageException.cs" />
+    <Compile Include="ByteOrder.cs" />
+    <Compile Include="ErrorEventArgs.cs" />
+    <Compile Include="WebSocket.cs" />
+    <Compile Include="Server\WebSocketServer.cs" />
+    <Compile Include="Server\WebSocketService.cs" />
+    <Compile Include="WsStream.cs" />
+    <Compile Include="RequestHandshake.cs" />
+    <Compile Include="ResponseHandshake.cs" />
+    <Compile Include="Handshake.cs" />
+    <Compile Include="Net\AuthenticationSchemeSelector.cs" />
+    <Compile Include="Net\AuthenticationSchemes.cs" />
+    <Compile Include="Net\ChunkStream.cs" />
+    <Compile Include="Net\ChunkedInputStream.cs" />
+    <Compile Include="Net\Cookie.cs" />
+    <Compile Include="Net\CookieCollection.cs" />
+    <Compile Include="Net\CookieException.cs" />
+    <Compile Include="Net\EndPointListener.cs" />
+    <Compile Include="Net\EndPointManager.cs" />
+    <Compile Include="Net\HttpConnection.cs" />
+    <Compile Include="Net\HttpListener.cs" />
+    <Compile Include="Net\HttpListenerContext.cs" />
+    <Compile Include="Net\HttpListenerException.cs" />
+    <Compile Include="Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="Net\HttpListenerRequest.cs" />
+    <Compile Include="Net\HttpListenerResponse.cs" />
+    <Compile Include="Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="Net\HttpUtility.cs" />
+    <Compile Include="Net\ListenerAsyncResult.cs" />
+    <Compile Include="Net\ListenerPrefix.cs" />
+    <Compile Include="Net\RequestStream.cs" />
+    <Compile Include="Net\ResponseStream.cs" />
+    <Compile Include="Net\WebHeaderCollection.cs" />
+    <Compile Include="Server\HttpServer.cs" />
+    <Compile Include="Server\ResponseEventArgs.cs" />
+    <Compile Include="Net\HttpVersion.cs" />
+    <Compile Include="Net\HttpStatusCode.cs" />
+    <Compile Include="Server\WebSocketServerBase.cs" />
+    <Compile Include="Net\Security\SslStream.cs" />
+    <Compile Include="Server\IServiceHost.cs" />
+    <Compile Include="Server\SessionManager.cs" />
+    <Compile Include="Server\WebSocketServiceHost.cs" />
+    <Compile Include="Server\ServiceManager.cs" />
+    <Compile Include="CloseStatusCode.cs" />
+    <Compile Include="Fin.cs" />
+    <Compile Include="Mask.cs" />
+    <Compile Include="Opcode.cs" />
+    <Compile Include="PayloadData.cs" />
+    <Compile Include="Rsv.cs" />
+    <Compile Include="WsFrame.cs" />
+    <Compile Include="Net\WebSockets\HttpListenerWebSocketContext.cs" />
+    <Compile Include="Net\WebSockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="Net\WebSockets\WebSocketContext.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+</Project>
