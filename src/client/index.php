@@ -41,11 +41,11 @@
               </script>
               <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js">
               </script>
-              <script src="/static/js/avatars.js?2">
+              <script src="/static/js/avatars.js?3">
               </script>
-              <script src="/static/js/DragonBound.compiled.js?2">
+              <script src="/static/js/DragonBound.compiled.js?3">
               </script>
-              <link rel="stylesheet" href="/static/css/DragonBound.min.css?2"/>
+              <link rel="stylesheet" href="/static/css/DragonBound.min.css?3"/>
               <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css"/>
               <style id="DragonTheme">
               </style>

@@ -7394,12 +7394,12 @@ DragonNetwork.prototype.BrokerConnect = function() {
 	this.ds && this.ds.Disconnect();
 	var a = this,
 		b, d;
-	"gl" == SERVER_TYPE ? (b = "game.dragonbound.net", d = 80) : "br" == SERVER_TYPE ? (b = "game2.dragonbound.net", d = 9100) : (b = "t.dragonbound.net", d = 9E3);
+	"gl" == SERVER_TYPE ? (b = "dragonbound.net76.net", d = 80) : "br" == SERVER_TYPE ? (b = "dragonbound.net76.net", d = 9100) : (b = "dragonbound.net76.net", d = 9E3);
 	$("#BrokerScreen").is(":visible") || AudioPlay(AUDIO_BROKER);
 	$("#BrokerTitle").html(l.t("Loading Channels") + "... " + l.t("Please Wait") + "...");
 	$(".BrokerChannel").removeClass("BrokerChannelOnline BrokerChannelFull opacity_button");
 	$("#BrokerScreen").show();
-	$.get("http://" + b + (80 != d ? ":" + d : "") + "/w", {}, function(b) {
+	$.get("http://" + b + (80 != d ? ":" + d : "") + "/w.php", {}, function(b) {
 		a.BrokerResponse2(b)
 	}, "json").fail(function() {
 		$("#BrokerTitle").html(l.t("Error! Wait 30 seconds, then press this button") + " ->")
