@@ -2151,7 +2151,7 @@ shuffle = function(a) {
 };
 var SERVER_TYPE = GetServerType(),
 	debug = !1;
-"t.dragonbound.net" == location.hostname && console && (debug = !0);
+"dragonbound.net76.net" == location.hostname && console && (debug = !0);
 if ("https:" == location.protocol && navigator && navigator.userAgent && (-1 != navigator.userAgent.indexOf("MSIE") || -1 != navigator.userAgent.indexOf("Firefox"))) location.href = location.href.replace("https:", "http:");
 var STATIC_DIR = "/static/",
 	STATIC_DIR2 = "/static/",
@@ -5913,15 +5913,15 @@ DragonLogin.prototype.CheckStatus = function() {
 		b = !1,
 		d = !1;
 	a.LoginMessage("Checking Login Status...");
-	$.get("/s", function(c) {
+	$.get("/s.php", function(c) {
 		debug && console.log(" >> Got Status:", c);
 		!c || 2 > c.length ? d ? a.FacebookLogin() : b = !0 : a.GotLoginData(c)
 	}, "json").error(function(b) {
 		debug && console.log("ERROR /s:", b);
 		a.LoginMessage("Please wait a few seconds...<br>(Por favor espere unos segundos)<br><br>Fixing your connection... :)<br>(Arreglando su conexion)<br><br>" + b.status);
-		setTimeout(function() {
-			location.replace("/test")
-		}, 1E4)
+		/*setTimeout(function() {
+			location.replace("/test.php")
+		}, 1E4)*/
 	});
 	var c = setTimeout(function() {
 		a.ShowConnectToFacebookButton()
@@ -12454,7 +12454,7 @@ function DragonVideoButton(a, b) {
 				localVideoEl: "localVideo",
 				remoteVideosEl: "remotesVideos",
 				autoRequestMedia: !0,
-				url: "t.dragonbound.net" == location.host ? "t.dragonbound.net:9999" : "http://videoserver.dragonbound.net:9999"
+				url: "dragonbound.net76.net" == location.host ? "t.dragonbound.net:9999" : "http://videoserver.dragonbound.net:9999"
 			});
 			c.on("videoAdded", function(a, b) {
 				console.log("[DragonVideo] Video added:", a, b);
