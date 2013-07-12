@@ -5919,9 +5919,9 @@ DragonLogin.prototype.CheckStatus = function() {
 	}, "json").error(function(b) {
 		debug && console.log("ERROR /s:", b);
 		a.LoginMessage("Please wait a few seconds...<br>(Por favor espere unos segundos)<br><br>Fixing your connection... :)<br>(Arreglando su conexion)<br><br>" + b.status);
-		/*setTimeout(function() {
+		setTimeout(function() {
 			location.replace("/test.php")
-		}, 1E4)*/
+		}, 1E4)
 	});
 	var c = setTimeout(function() {
 		a.ShowConnectToFacebookButton()
@@ -5930,7 +5930,7 @@ DragonLogin.prototype.CheckStatus = function() {
 		debug && console.log(" >> OnFacebookLoaded");
 		clearTimeout(c);
 		FB.init({
-			appId: "br" == SERVER_TYPE ? "213874305403662" : "154795011315451",
+			appId: "1397938667086072",
 			status: !0,
 			cookie: !0,
 			xfbml: !0,
@@ -5975,7 +5975,7 @@ DragonLogin.prototype.Login = function(a) {
 	debug && console.log(" >> Login");
 	var b = this;
 	b.LoginMessage(l.t("Loading your account") + "...");
-	$.post("/f", a, function(a) {
+	$.post("/f.php", a, function(a) {
 		b.GotLoginData(a)
 	}, "json").error(function(a) {
 		console && console.log("Error: Got Server Status:", a);
@@ -5999,7 +5999,7 @@ DragonLogin.prototype.GotLoginData = function(a) {
 };
 DragonLogin.prototype.Logout = function() {
 	var a = this;
-	$.post("/g", {}, function() {});
+	$.post("/g.php", {}, function() {});
 	$("#BrokerScreen").hide();
 	DragonDialogOpen(l.t("Bye Bye"), l.t("We logged you out from your Facebook account too for your account safety.<br><br>Hope to see you again soon!"), DIALOG_BUTTONS_OK, function() {
 		a.ShowConnectToFacebookButton()
