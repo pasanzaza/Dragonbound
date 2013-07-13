@@ -5919,9 +5919,9 @@ DragonLogin.prototype.CheckStatus = function() {
 	}, "json").error(function(b) {
 		debug && console.log("ERROR /s:", b);
 		a.LoginMessage("Please wait a few seconds...<br>(Por favor espere unos segundos)<br><br>Fixing your connection... :)<br>(Arreglando su conexion)<br><br>" + b.status);
-		setTimeout(function() {
+		/*setTimeout(function() {
 			location.replace("/test.php")
-		}, 1E4)
+		}, 1E4)*/
 	});
 	var c = setTimeout(function() {
 		a.ShowConnectToFacebookButton()
@@ -6017,7 +6017,7 @@ DragonLogin.prototype.PasswordLoginButtonClicked = function(a, b) {
 			var b = $("#DragonLoginUsername").val(),
 				e = $("#DragonLoginPassword").val(),
 				e = e + ("|" + c),
-				e = CryptoJS.SHA256(e).toString() + get_time();
+				e = CryptoJS.SHA256(e).toString();
 			d.Login({
 				t: a,
 				u: b,
