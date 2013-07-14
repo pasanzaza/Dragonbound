@@ -134,6 +134,8 @@ abstract class BaseFacebook
     CURLOPT_CONNECTTIMEOUT => 10,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_TIMEOUT        => 60,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => 0,
     CURLOPT_USERAGENT      => 'facebook-php-3.2',
   );
 
@@ -899,6 +901,10 @@ abstract class BaseFacebook
       $params['access_token'] = $this->getAccessToken();
     }
 
+    if (isset($params['access_token'])) {
+      $params['appsecret_proof'] = $this->getAppSecretProof($params['access_token']);
+    }
+
     // json_encode all params values that are not strings
     foreach ($params as $key => $value) {
       if (!is_string($value)) {
@@ -907,6 +913,19 @@ abstract class BaseFacebook
     }
 
     return $this->makeRequest($url, $params);
+  }
+
+  /**
+   * Generate a proof of App Secret
+   * This is required for all API calls originating from a server
+   * It is a sha256 hash of the access_token made using the app secret
+   *
+   * @param string $access_token The access_token to be hashed (required)
+   *
+   * @return string The sha256 hash of the access_token
+   */
+  protected function getAppSecretProof($access_token) {
+    return hash_hmac('sha256', $access_token, $this->getAppSecret());
   }
 
   /**

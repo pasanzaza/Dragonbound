@@ -11,7 +11,7 @@ if ($t == "1")
     
     $config = array();
     $config['appId'] = '1397938667086072';
-    $config['secret'] = 'xdd';
+    $config['secret'] = 'xd';
     $config['fileUpload'] = false;
       
     $facebook = new Facebook($config);
@@ -36,7 +36,7 @@ if ($t == "1")
       $loginUrl = $facebook->getLoginUrl();
     }
     
-    echo '[146634,0,0,"4dcde013e8121f7cee5e","PE"]';
+    echo '[146634,0,0,"955fa89ea0e762fbe7c4","PE"]';
 }
 else  if($t == "2")
 {
@@ -51,7 +51,7 @@ else  if($t == "2")
     //950e90b558019a923826d889bc7a42cab72aff82a65171cbec983a9aafc7f496
     if ($_c == $p)
     {
-        echo '[146634,0,0,"4dcde013e8121f7cee5e","PE"]';
+        echo '[146634,0,0,"955fa89ea0e762fbe7c4","PE"]';
     }
     else
     {

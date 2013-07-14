@@ -2151,7 +2151,7 @@ shuffle = function(a) {
 };
 var SERVER_TYPE = GetServerType(),
 	debug = !1;
-"dragonbound.net76.net" == location.hostname && console && (debug = !0);
+"carlosx.byethost15.com" == location.hostname && console && (debug = !0);
 if ("https:" == location.protocol && navigator && navigator.userAgent && (-1 != navigator.userAgent.indexOf("MSIE") || -1 != navigator.userAgent.indexOf("Firefox"))) location.href = location.href.replace("https:", "http:");
 var STATIC_DIR = "/static/",
 	STATIC_DIR2 = "/static/",
@@ -3793,13 +3793,13 @@ function DragonGuard(a) {
 		CCamera.prototype !== b[4] && (CCamera.prototype = b[4], d = 1);
 		DragonSocket.prototype !== b[5] && (DragonSocket.prototype = b[5], d = 1);
 		DragonLogin.prototype !== b[6] && (DragonLogin.prototype = b[6], d = 1);
-		d && ($.post("/b", {
+		d && ($.post("/b.php", {
 			u: a.user_id,
 			r: 1
 		}, function() {
-			window.location = "/logout"
+			window.location = "/logout.php"
 		}), setTimeout(function() {
-			window.location = "/logout"
+			window.location = "/logout.php"
 		}, 6E4))
 	}, 3E5)
 }
@@ -5919,9 +5919,11 @@ DragonLogin.prototype.CheckStatus = function() {
 	}, "json").error(function(b) {
 		debug && console.log("ERROR /s:", b);
 		a.LoginMessage("Please wait a few seconds...<br>(Por favor espere unos segundos)<br><br>Fixing your connection... :)<br>(Arreglando su conexion)<br><br>" + b.status);
+        
 		/*setTimeout(function() {
 			location.replace("/test.php")
 		}, 1E4)*/
+        
 	});
 	var c = setTimeout(function() {
 		a.ShowConnectToFacebookButton()
@@ -6958,7 +6960,7 @@ DragonNetwork.prototype.ConnectToGameServer = function(a, b) {
 		FriendPrivateChat(a, b, d, c)
 	};
 	e[SERVER_OPCODE.logout] = function() {
-		top.location = "/logout"
+		top.location = "/logout.php"
 	};
 	e[SERVER_OPCODE.disconnect_reason] = function(a) {
 		debug && console.log("Receive: disconnect_reason", a);
@@ -7394,7 +7396,7 @@ DragonNetwork.prototype.BrokerConnect = function() {
 	this.ds && this.ds.Disconnect();
 	var a = this,
 		b, d;
-	"gl" == SERVER_TYPE ? (b = "dragonbound.net76.net", d = 80) : "br" == SERVER_TYPE ? (b = "dragonbound.net76.net", d = 9100) : (b = "dragonbound.net76.net", d = 9E3);
+	"gl" == SERVER_TYPE ? (b = "carlosx.byethost15.com", d = 80) : "br" == SERVER_TYPE ? (b = "carlosx.byethost15.com", d = 9100) : (b = "carlosx.byethost15.com", d = 9E3);
 	$("#BrokerScreen").is(":visible") || AudioPlay(AUDIO_BROKER);
 	$("#BrokerTitle").html(l.t("Loading Channels") + "... " + l.t("Please Wait") + "...");
 	$(".BrokerChannel").removeClass("BrokerChannelOnline BrokerChannelFull opacity_button");
@@ -12454,7 +12456,7 @@ function DragonVideoButton(a, b) {
 				localVideoEl: "localVideo",
 				remoteVideosEl: "remotesVideos",
 				autoRequestMedia: !0,
-				url: "dragonbound.net76.net" == location.host ? "t.dragonbound.net:9999" : "http://videoserver.dragonbound.net:9999"
+				url: "carlosx.byethost15.com" == location.host ? "t.dragonbound.net:9999" : "http://videoserver.dragonbound.net:9999"
 			});
 			c.on("videoAdded", function(a, b) {
 				console.log("[DragonVideo] Video added:", a, b);

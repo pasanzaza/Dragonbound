@@ -1,8 +1,8 @@
 <?php
 
 
-$url_web = "dragonbound.net76.net";
+$url_web = "carlosx.byethost15.com";
 $fb_api = "1397938667086072";
 
-$ver = "8";
+$ver = "4";
 ?>
